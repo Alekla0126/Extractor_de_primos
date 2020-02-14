@@ -18,15 +18,15 @@ class Extractor(object):
     def extract(self):
         self.primo.clear
         prime = False
-        for i in range(self.low,self.high):
+        for i in range(self.low,self.high+1):
             if(i>0):
                 if ((math.factorial(i-1))+1) % i == 0:
                     self.primo.append(self.list[i])         
         return self.primo
 
 def main():
-    low = int (input("Limite inferiror"))
-    high = int (input("Limite superior"))
+    low = int (input("Limite inferiror: "))
+    high = int (input("Limite superior: "))
     extractor = Extractor(low,high)
     extractor.initizalize()
     primos = extractor.extract()
